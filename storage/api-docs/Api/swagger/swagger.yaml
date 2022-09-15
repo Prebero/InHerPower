@@ -1,0 +1,13 @@
+Swagger:"2.0"
+info:
+version:"1.0.0"
+title:"InHerPower"
+host: localhost:3000
+basepath: /
+schemas:
+  -http
+  consumers:
+  -application/json
+  produces:
+  -application/json
+  paths:

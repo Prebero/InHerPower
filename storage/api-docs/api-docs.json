@@ -1,0 +1,186 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "InHerPower",
+        "version": "1.0.0"
+    },
+    "paths": {
+        "/api/posts": {
+            "get": {
+                "tags": [
+                    "Posts"
+                ],
+                "summary": "Get all posts",
+                "description": "All posts",
+                "operationId": "postsDetails",
+                "responses": {
+                    "200": {
+                        "description": "Fetched successfully",
+                        "content": {
+                            "application/json": {}
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "bearer": []
+                    }
+                ]
+            },
+            "put": {
+                "tags": [
+                    "Posts"
+                ],
+                "summary": "Update a Posts",
+                "description": "Update a Posts",
+                "operationId": "UpdatePosts",
+                "requestBody": {
+                    "content": {
+                        "multipart/form-data": {
+                            "schema": {
+                                "required": [
+                                    "title",
+                                    "description",
+                                    "category_id",
+                                    "file"
+                                ],
+                                "properties": {
+                                    "title": {
+                                        "type": "text"
+                                    },
+                                    "description": {
+                                        "type": "text"
+                                    },
+                                    "category_id": {
+                                        "type": "text"
+                                    },
+                                    "file": {
+                                        "type": "file"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        },
+                        "application/json": {
+                            "schema": {}
+                        }
+                    }
+                },
+                "responses": {
+                    "422": {
+                        "description": "Successfully Update",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Posts"
+                ],
+                "summary": "Create a Posts",
+                "description": "Create a Posts",
+                "operationId": "CreatePosts",
+                "requestBody": {
+                    "content": {
+                        "multipart/form-data": {
+                            "schema": {
+                                "required": [
+                                    "title",
+                                    "description",
+                                    "category_id",
+                                    "file"
+                                ],
+                                "properties": {
+                                    "title": {
+                                        "type": "text"
+                                    },
+                                    "description": {
+                                        "type": "text"
+                                    },
+                                    "category_id": {
+                                        "type": "text"
+                                    },
+                                    "file": {
+                                        "type": "file"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        },
+                        "application/json": {
+                            "schema": {}
+                        }
+                    }
+                },
+                "responses": {
+                    "422": {
+                        "description": "Successfully Created",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/posts/{post}": {
+            "get": {
+                "tags": [
+                    "Posts"
+                ],
+                "summary": "Show posts by Id",
+                "description": "Show posts Details",
+                "operationId": "ShowpostsDetails",
+                "parameters": [
+                    {
+                        "name": "Posts",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Fetched successfully",
+                        "content": {
+                            "application/json": {}
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "Posts"
+                ],
+                "summary": "Delete posts by Id",
+                "description": "Delete posts Details",
+                "operationId": "DeletepostsDetails",
+                "parameters": [
+                    {
+                        "name": "Posts",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Fetched successfully",
+                        "content": {
+                            "application/json": {}
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
